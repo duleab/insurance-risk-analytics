@@ -65,10 +65,55 @@ venv.bak/
 *.swo
 
 # Project specific
-data/
-logs/
-models/
+/data/raw/
+/data/processed/
+/data/external/
+/logs/
+/outputs/
+/models/
+
+# DVC specific
+/.dvc/cache/
+/.dvc/tmp/
 *.csv
 *.xlsx
-*.pkl 
-/data
+*.pkl
+*.txt.dvc
+*.csv.dvc
+*.xlsx.dvc
+*.pkl.dvc
+
+# Large files
+*.txt
+MachineLearningRating_v3.txt
+
+# Temporary files
+*~
+.DS_Store
+Thumbs.db
+
+# Output directories
+/outputs/
+/results/
+
+# Data files
+*.csv
+*.pkl
+*.txt 
+
+
+# Empty output directories
+outputs/
+results/statistical_testing/
+
+# Test artifacts (if keeping tests folder)
+tests/__pycache__/
+tests/*.pyc
+
+
+# Corrupted or temporary files
+*.tmp
+*.bak
+
+# Empty placeholder files (if you want to exclude them)
+**/placeholder.*
