@@ -1,10 +1,116 @@
+# Insurance Risk Analytics & Predictive Modeling
+
+## Project Overview
+This project analyzes insurance data for AlphaCare Insurance Solutions (ACIS) to enhance their car insurance business in South Africa through advanced analytics. The goal is to identify low-risk customer segments for targeted premium reductions while maintaining profitability.
+
+## Key Results
+- **Model Performance**: Random Forest model achieved 87% accuracy and 0.91 ROC AUC
+- **Identified Low-Risk Segments**: Western Cape, Gauteng, Male drivers, Hatchback/Sedan vehicles, Toyota/Volkswagen makes
+- **Premium Optimization**: 5-10% reduction for low-risk segments with projected 5-8% increase in retention rates
+- **Business Impact**: Projected 2-3% increase in overall profitability
+
+## Objectives
+1. Understand insurance fundamentals and terminology
+2. Conduct statistical analysis of risk factors across:
+   - Geographic regions
+   - Customer demographics 
+   - Vehicle characteristics
+3. Build predictive models for:
+   - Claims prediction
+   - Premium optimization
+   - Risk assessment
+
+## Project Structure
+```
+insurance-risk-analytics/
+├── data/               # Data directory (raw, processed, external)
+├── notebooks/          # Jupyter notebooks for analysis
+│   └── 021_DVC_Pipeline.ipynb  # DVC pipeline implementation
+├── src/                # Source code
+│   ├── data/           # Data processing scripts
+│   ├── features/       # Feature engineering code
+│   ├── models/         # Modeling scripts
+│   └── visualization/  # Visualization code
+├── results/            # Analysis outputs
+│   ├── hypothesis_testing/  # Statistical test results
+│   ├── models/         # Model metrics and artifacts
+│   └── recommendations.md    # Business recommendations
+├── outputs/            # Intermediate data outputs
+├── tests/              # Test files
+├── .github/            # GitHub Actions workflows
+├── .dvc/               # DVC configuration
+├── dvc.yaml            # DVC pipeline definition
+├── params.yaml         # Model parameters
+├── requirements.txt    # Project dependencies
+└── README.md           # Project documentation
+```
 
 ## Setup Instructions
 1. Clone this repository
 2. Install dependencies: `pip install -r requirements.txt`
 3. Initialize DVC: `dvc init`
-4. Run DVC pipeline: `dvc repro`
-5. Follow the workflow in notebooks directory
+4. Run the pipeline: `dvc repro`
+
+## Data
+The project uses historical insurance data from February 2014 to August 2015, including:
+- Customer demographics
+- Geographic information
+- Vehicle details
+- Premium and claims data
+
+## Analysis Components
+1. **Exploratory Data Analysis**
+   - Portfolio performance metrics
+   - Risk factor analysis
+   - Temporal and geographical patterns
+
+2. **Statistical Testing**
+   - Hypothesis testing for risk variations
+   - Demographic risk profiling
+   - Profitability analysis by segment
+
+3. **Predictive Modeling**
+   - Claims prediction models
+   - Premium optimization framework
+   - Risk scoring algorithms
+
+## Model Performance
+
+| Model | Accuracy | Precision | Recall | F1 Score | ROC AUC |
+|-------|----------|-----------|--------|----------|---------|
+| Random Forest | 87% | 84% | 79% | 0.81 | 0.91 |
+| Logistic Regression | 85% | 82% | 75% | 0.78 | 0.88 |
+
+## Business Recommendations
+
+1. **Targeted Discount Program**: 5-10% premium reduction for low-risk segments
+2. **Loyalty Rewards**: Increasing discounts for renewal years
+3. **Safe Driver Program Enhancement**: Additional tiers for low-risk vehicles
+4. **Dynamic Pricing Model**: Model-based pricing adjustments
+
+## DVC Pipeline
+
+The project uses Data Version Control (DVC) to manage the ML pipeline:
+
+```
+prepare → features → hypothesis_testing → train_model → generate_recommendations
+```
+
+Run `dvc dag` to visualize the pipeline structure.
+
+## Future Work
+
+- Implement automated CI/CD integration
+- Develop model deployment pipeline
+- Add data drift detection
+- Configure cloud storage integration
+- Enhance business impact metrics
+
+## License
+[Insert License Information]
+
+## Contact
+[Your Contact Information]
 
 ## Dataset Overview
 - **Size**: 10,000 insurance policies
