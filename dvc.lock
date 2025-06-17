@@ -1,0 +1,36 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python src/preprocess.py data/raw/insurance_data.csv 
+      outputs/insurance_data_processed.csv
+    deps:
+    - path: data/raw/insurance_data.csv
+      hash: md5
+      md5: df3e5e1bd75944144573d1155846c01e
+      size: 94993
+    - path: src/preprocess.py
+      hash: md5
+      md5: c3b927f6e899cb01d38221158a499a38
+      size: 2874
+    outs:
+    - path: outputs/insurance_data_processed.csv
+      hash: md5
+      md5: e71e1a113b1c87e046263bc7df81b52d
+      size: 80256
+  feature_engineering:
+    cmd: python src/features/feature_engineering.py 
+      outputs/insurance_data_processed.csv outputs/insurance_data_features.csv
+    deps:
+    - path: outputs/insurance_data_processed.csv
+      hash: md5
+      md5: e71e1a113b1c87e046263bc7df81b52d
+      size: 80256
+    - path: src/features/feature_engineering.py
+      hash: md5
+      md5: a6f6836a7d1bca0304456f1295884f7d
+      size: 2978
+    outs:
+    - path: outputs/insurance_data_features.csv
+      hash: md5
+      md5: b5862f9df80474bf20f287cdb0c5fc8c
+      size: 214033

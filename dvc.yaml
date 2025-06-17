@@ -1,0 +1,17 @@
+stages:
+  preprocess:
+    cmd: python src/preprocess.py data/raw/insurance_data.csv 
+      outputs/insurance_data_processed.csv
+    deps:
+    - data/raw/insurance_data.csv
+    - src/preprocess.py
+    outs:
+    - outputs/insurance_data_processed.csv
+  feature_engineering:
+    cmd: python src/features/feature_engineering.py 
+      outputs/insurance_data_processed.csv outputs/insurance_data_features.csv
+    deps:
+    - outputs/insurance_data_processed.csv
+    - src/features/feature_engineering.py
+    outs:
+    - outputs/insurance_data_features.csv
