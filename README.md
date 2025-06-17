@@ -106,12 +106,6 @@ Run `dvc dag` to visualize the pipeline structure.
 - Configure cloud storage integration
 - Enhance business impact metrics
 
-## License
-[Insert License Information]
-
-## Contact
-[Your Contact Information]
-
 ## Dataset Overview
 - **Size**: 10,000 insurance policies
 - **Features**: 11 variables including demographics, vehicle details, and financial metrics
